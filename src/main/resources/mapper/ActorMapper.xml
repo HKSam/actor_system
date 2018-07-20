@@ -14,10 +14,20 @@
 		select * from actor
 	</select>
 	<update id="updateActorbyid" parameterType="po.Actor">
-		update actor set 
-		first_name=#{first_name},last_name=#{last_name},last_update=#{last_update}
-		where actor_id=#{id}
-	</update>
+    update actor
+    <set>
+      <if test="first_name != null">
+        first_name = #{first_name,jdbcType=VARCHAR},
+      </if>
+      <if test="last_name != null">
+        last_name = #{last_name,jdbcType=VARCHAR},
+      </if>
+      <if test="last_update != null">
+        last_update = #{last_update,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where actor_id = #{id,jdbcType=SMALLINT}
+  </update>
 	<select id="getactorbyid" resultMap="actorMap" parameterType="short">
 		select * from actor where actor_id=#{id} 
 	</select>
