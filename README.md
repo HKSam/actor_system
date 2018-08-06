@@ -31,6 +31,7 @@ SpringMVC,Mybatis,Spring三大框架的整合总是很麻烦，在此提供一�
 
 14. 将后台接口REST化，详情参考https://gitee.com/shenzhanwang/Spring-REST
 
+15. 添加mybatis的动态SQL的使用
 
 访问入口：http://localhost:8080/SSM/login
 
