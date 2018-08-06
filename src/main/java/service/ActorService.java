@@ -13,4 +13,6 @@ import po.Actor;
 		Actor addactor(Actor a);
 		void delete(short id);
 		InputStream getInputStream() throws Exception;
+		public List<Actor> selectActorByName(Actor a);
+		public List<Actor> selectActorByName(Actor a, int pagenum, int pagesize);
 	}

@@ -71,4 +71,17 @@ public class ActorServiceImpl implements ActorService{
 		return in;
 	}
 
+	@Override
+	public List<Actor> selectActorByName(Actor a) {
+		List<Actor> list = actorMapper.selectActorByName(a);
+		return list;
+	}
+
+	@Override
+	public List<Actor> selectActorByName(Actor a, int pagenum, int pagesize) {
+		PageHelper.startPage(pagenum,pagesize);  
+		List<Actor> list = actorMapper.selectActorByName(a);
+		return list;
+	}
+
 }

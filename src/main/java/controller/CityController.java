@@ -1,5 +1,6 @@
 package controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,6 +62,17 @@ public class CityController {
 	@ResponseBody
 	MSG getcountrycity(@RequestParam("country")String country){
 		Country a=cityservice.getCountryCitys(country);
+		return new MSG("200",a);
+	}
+	
+	@RequestMapping(value="/citys/countrys",method = RequestMethod.GET)
+	@ResponseBody
+	MSG getcountrycity(){
+		List<Integer> ids = new ArrayList<Integer>();
+		ids.add(23);
+		ids.add(50);
+		ids.add(86);
+		List<City> a=cityservice.getCityByCountrys(ids);
 		return new MSG("200",a);
 	}
 	

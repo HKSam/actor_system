@@ -36,18 +36,33 @@ public class ActorController {
 	@ApiOperation("获取所有演员列表")
 	@RequestMapping(value="/actors",method = RequestMethod.GET,produces = {"application/json;charset=UTF-8"})
 	@ResponseBody
-	public ActorGrid listActors(@RequestParam("current") int current,@RequestParam("rowCount") int rowCount){
+	public ActorGrid listActors(@RequestParam("current") int current,@RequestParam("rowCount") int rowCount,
+			@RequestParam(required=false) String firstName,@RequestParam(required=false) String lastName){
 		log.info("aaa");
 		log.error("bbb");
-		int total=actorservice.getactornum();
-		List<Actor> list=actorservice.getpageActors(current,rowCount);
+		int total;
+		List<Actor> list;
 		ActorGrid grid=new ActorGrid();
+		if (firstName==null&&lastName==null) {
+			total=actorservice.getactornum();
+			list=actorservice.getpageActors(current,rowCount);
+			grid.setRows(list);
+			grid.setTotal(total);
+		} else {
+			Actor a = new Actor();
+			a.setFirst_name(firstName);
+			a.setLast_name(lastName);
+			total = actorservice.selectActorByName(a).size();
+			list = actorservice.selectActorByName(a, current, rowCount);
+			grid.setRows(list);
+			grid.setTotal(total);
+		}
 		grid.setCurrent(current);
 		grid.setRowCount(rowCount);
-		grid.setRows(list);
-		grid.setTotal(total);
 		return grid;
 	}
+	
+	
 	
 	@ApiOperation("获取所有演员列表XML")
 	@RequestMapping(value="/listActorsXml",produces = {"application/xml;charset=UTF-8"},method = RequestMethod.GET)

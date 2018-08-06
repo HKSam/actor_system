@@ -21,7 +21,7 @@ public class SwaggerConfig {
 
 	@Bean
 	public Docket createRestApi() {
-		return new Docket(DocumentationType.SWAGGER_2).host("localhost:8081").apiInfo(apiInfo()).select()
+		return new Docket(DocumentationType.SWAGGER_2).host("localhost:9999").apiInfo(apiInfo()).select()
 				.apis(RequestHandlerSelectors.basePackage("controller")).paths(PathSelectors.any())
 				.build();
 	}
