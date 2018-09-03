@@ -19,7 +19,7 @@ SpringMVC,Mybatis,Spring三大框架的整合总是很麻烦，在此提供一�
 
 8.包含了数据表导出为Excel下载的功能，包含了解析Excel内容的API，使用POI实现；
 
-9.包含了带验证码的登录功能以及登录权限验证的拦截器；
+9.包含了带验证码的登录功能以及登录权限验证的拦截器, **登录用户名TOM，密码1234** ；
 
 10.要使用Struts2+hibernate+spring的整合，[点击这里进入](https://github.com/shenzhanwang/SSH_maven)  
 
