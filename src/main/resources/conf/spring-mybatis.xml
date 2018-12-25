@@ -19,7 +19,7 @@
 	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
 		init-method="init" destroy-method="close">
 		<!-- 基本属性 url、user、password -->
-		<property name="url" value="jdbc:mysql://192.168.190.130:3306/sakila" />
+		<property name="url" value="jdbc:mysql://192.168.197.128:3306/sakila" />
 		<property name="username" value="root" />
 		<property name="password" value="1234" />
 
