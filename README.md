@@ -35,6 +35,8 @@ Spring boot,Mybatis的整合总是很麻烦，在此提供一个已经整合好�
 
 访问入口：http://localhost:8080/SSM/login
 
+16. 要使用传统spring，切换分支到https://gitee.com/shenzhanwang/SSM
+
 效果图：
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2018/1128/125458_22041b77_1110335.gif "SSM.gif")
