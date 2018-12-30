@@ -27,13 +27,13 @@ Spring boot,Mybatis的整合总是很麻烦，在此提供一个已经整合好�
 
 12.整合日志工具log4j2，较log4j1.x有较大性能提升，支持日志文件输出和控制台输出；
 
-13. 整合接口文档swagger2.2.2，入口http://localhost:8080/SSM/swagger-ui.html
+13. 整合接口文档swagger2.2.2，入口http://localhost:8080/swagger-ui.html
 
 14. 将后台接口REST化，详情参考https://gitee.com/shenzhanwang/Spring-REST
 
 15. 添加mybatis的动态SQL的使用
 
-访问入口：http://localhost:8080/SSM/login
+访问入口：http://localhost:8080/login
 
 16. 要使用传统spring，切换分支到https://gitee.com/shenzhanwang/SSM/tree/master/
 
