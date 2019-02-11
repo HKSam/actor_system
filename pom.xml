@@ -63,6 +63,20 @@
 		</dependencies>
 		<build>
 			<finalName>SSM</finalName>
+			<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>1.5.10.RELEASE</version>
+				  <executions>
+                        <execution>
+                            <goals>
+                                <goal>repackage</goal>
+                            </goals>
+                        </execution>
+                  </executions>
+			</plugin>
+			</plugins>
 		</build>
 		<!-- 指定maven编译方式为jdk1.8版本 -->
 	<profiles>
