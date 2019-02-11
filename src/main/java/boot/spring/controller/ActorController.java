@@ -23,12 +23,16 @@ import boot.spring.service.ActorService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Api(tags = "演员接口")
 @Controller
 public class ActorController {
 	@Autowired
 	private ActorService actorservice;
+
+	private static final Logger LOG = LoggerFactory.getLogger(ActorController.class);
 	
 	@ApiOperation("获取所有演员列表")
 	@RequestMapping(value="/actors",method = RequestMethod.GET)
@@ -41,6 +45,7 @@ public class ActorController {
 		grid.setRowCount(rowCount);
 		grid.setRows(list);
 		grid.setTotal(total);
+		LOG.debug("获取所有演员列表");
 		return grid;
 	}
 	
